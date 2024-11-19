@@ -34,6 +34,13 @@ $ docker compose up -d
 (http://localhost:5000/bonifica/api/swagger)
 
 
+## Endpoint
+
+Postman / Insomnia
+
+http://localhost:5000/bonifica/api/v1/users
+
+
 ## Security 
 
 O NestJS fornece uma base robusta para implementar criptografia de API graças à sua arquitetura
