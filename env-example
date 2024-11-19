@@ -1,0 +1,25 @@
+# Application
+API_PREFIX=bonifica/api
+APP_NAME=NestAPI
+
+# Crypto
+ALGORITHM=aes-256-cbc
+ENCRYPT_SECRET_KEY=8b6707e4ab24785abdadf43088dbdcd758bfd7e9e013d16f025bf7007bca4678
+ENCRYPT_IV=4d79a9b797c69ee1a8c6d9fecf3f6a3b
+
+# Environment
+NODE_ENV=development
+PORT=5000
+
+# Host
+CLIENT_DEV=http://localhost:4200
+CLIENT_PROD=http://localhost:4200
+
+# JWT
+JWT_SECRET=eyJuYW1lIjoiTWFyvbnkiLC23JlbWFpbvbnkuZm91cnN1bnNAZ2VubWXBpL3YxzL2F2YXRhci83ODA4OguanBnIiwisZSIbWluIiwiaWF0IjleHAiO
+
+# Swagger
+SWAGGER_DESCRIPTION=Bonifica Nest API
+SWAGGER_PREFIX=swagger
+SWAGGER_TITLE=Bonifica Nest API
+SWAGGER_VERSION=1.0
