@@ -24,18 +24,8 @@ export class UserService {
       throw new BadRequestException('Falha na geração do token');
     }
 
-    const userData = {
-      name: await this.encryption(user.name),
-      email: await this.encryption(user.email),
-      message: await this.encryption(user.message),
-    };
-
-    if (!userData) {
-      throw new BadRequestException('Falha na criptografia');
-    }
-
     try {
-      const response = await this.externalApi(token, userData);
+      const response = await this.externalApi(token, user);
       return customMessage(HttpStatus.CREATED, `Usuário criado com sucesso`, token, response);
     } catch (error) {
       return customMessage(HttpStatus.BAD_REQUEST, 'Falha no registro do usuário', null, {});
@@ -63,9 +53,9 @@ export class UserService {
     return token;
   }
 
-  async externalApi(token: string, userData: UserDto) {
-    return this.httpService
-      .post('http://127.0.0.1:8000/users', userData, {
+  async externalApi(token: string, userData: UserDto): Promise<any> {
+    return await this.httpService
+      .post('http://127.0.0.1:8000/api/users', userData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -73,5 +63,4 @@ export class UserService {
       .then(response => response.data)
       .catch(error => console.error(error));
   }
-
 }
